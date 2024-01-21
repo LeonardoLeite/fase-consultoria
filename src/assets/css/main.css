@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  src: url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('../fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+:root {
+  --main-orange-color: #e85733;
+  --main-blue-color: #101929;
+  --main-background-color: #010918;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Gilroy-Light';
+}
+
+body {
+  max-width: 100%;
+  color: white;
+}
