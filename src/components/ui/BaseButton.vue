@@ -18,5 +18,10 @@ export default {
   padding: 0.5rem 1.6rem;
   border-radius: 1rem;
   font-family: 'Gilroy-ExtraBold';
+  text-decoration: none;
+}
+
+#contactButton:visited {
+  color: white;
 }
 </style>
