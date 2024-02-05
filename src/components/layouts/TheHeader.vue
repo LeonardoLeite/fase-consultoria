@@ -56,6 +56,7 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {

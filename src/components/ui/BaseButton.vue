@@ -19,6 +19,7 @@ export default {
   border-radius: 1rem;
   font-family: 'Gilroy-ExtraBold';
   text-decoration: none;
+  color: white;
 }
 
 #contactButton:visited {
