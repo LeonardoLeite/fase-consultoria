@@ -14,7 +14,7 @@
     </div>
     <div>
       <!-- TODO load image dicamicaly from the props -->
-      <img src="../assets/images/Notebook.svg" alt="Laptop image" />
+      <img :src="imagePath" alt="Laptop image" />
     </div>
   </section>
 </template>
@@ -32,7 +32,9 @@ export default {
     imageElement: String
   },
   data() {
-    return {}
+    return {
+      imagePath: '../assets/images/' + this.imageElement
+    }
   }
 }
 </script>
@@ -43,7 +45,7 @@ export default {
   background-color: var(--main-background-color);
   display: flex;
   justify-content: space-between;
-  padding: 2rem 3rem;
+  padding: 3rem;
 }
 
 #innerLeftContent {
