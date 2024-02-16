@@ -14,7 +14,7 @@
     </div>
     <div>
       <!-- TODO load image dicamicaly from the props -->
-      <img :src="imagePath" alt="Laptop image" />
+      <img src="@/assets/images/Notebook.svg" alt="Laptop image" />
     </div>
   </section>
 </template>
@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      imagePath: '../assets/images/' + this.imageElement
+      imagePath: '@/assets/images/' + this.imageElement
     }
   }
 }

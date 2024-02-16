@@ -1,17 +1,21 @@
 <!--Template-->
 <template>
-  <div id="card">
-    <!-- Gliph -->
-    <!-- Title -->
-    <!-- Text -->
+  <div id="cardContainer">
+    <div id="cardContent">
+      <!-- Gliph -->
+      <img src="../assets/images/chip.svg" alt="Computer chip" />
+      <!-- Title -->
+      <h3>{{ cardTitle }}</h3>
+      <!-- Text -->
+      <p>{{ cardText }}</p>
+    </div>
   </div>
 </template>
 
 <!--Script-->
 <script>
 export default {
-  name: 'ComponentName',
-  props: {},
+  props: { cardBadge: String, cardTitle: String, cardText: String },
   data() {
     return {}
   }
