@@ -16,13 +16,13 @@
             >Consultoria de TI</router-link
           >
           <router-link :to="{ name: 'development' }" @click="showDropdownMenu"
-            >Desenvolvimento e gestão de sites</router-link
+            >Criação e gestão de sites</router-link
           >
           <router-link :to="{ name: 'design' }" @click="showDropdownMenu"
             >Design gráfico</router-link
           >
           <router-link :to="{ name: 'branding' }" @click="showDropdownMenu"
-            >Criação e registro de marcas</router-link
+            >Registro de marcas</router-link
           >
         </div>
       </div>
