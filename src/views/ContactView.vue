@@ -7,13 +7,36 @@
         Conte pra gente um pouco do que você precisa,<br />que entraremos em contato muito em breve.
       </p>
     </div>
-    <!-- TODO Create the form component to send client informations by email -->
     <div id="rightContent">
       <div id="buttons">
-        <button class="serviceButton">Consultoria de TI</button>
-        <button class="serviceButton">Registro de marca</button>
-        <button class="serviceButton">Criação e gestão de sites</button>
-        <button class="serviceButton">Design gráfico</button>
+        <button
+          class="serviceButton"
+          @click="setButtonState"
+          value="consulting"
+          :class="{ serviceButtonIsActive: selectedConsulting }">
+          Consultoria de TI
+        </button>
+        <button
+          class="serviceButton"
+          @click="setButtonState"
+          value="branding"
+          :class="{ serviceButtonIsActive: selectedBrandig }">
+          Registro de marca
+        </button>
+        <button
+          class="serviceButton"
+          @click="setButtonState"
+          value="development"
+          :class="{ serviceButtonIsActive: selectedDevelopment }">
+          Criação e gestão de sites
+        </button>
+        <button
+          class="serviceButton"
+          @click="setButtonState"
+          value="design"
+          :class="{ serviceButtonIsActive: selectedDesign }">
+          Design gráfico
+        </button>
       </div>
       <form @submit.prevent="submitForm" id="clientForm">
         <input type="text" name="name" id="name" placeholder="Nome" v-model="clientName" />
@@ -42,15 +65,47 @@ export default {
       clientName: '',
       clientMail: '',
       clientPhone: '',
-      clientMessage: ''
+      clientMessage: '',
+      selectedConsulting: false,
+      selectedBrandig: false,
+      selectedDevelopment: false,
+      selectedDesign: false
     }
   },
   methods: {
+    clearForm() {
+      // TODO Print message on screen
+      console.log('Mensagem enviada com sucesso.')
+      this.clientName = ''
+      this.clientMail = ''
+      this.clientPhone = ''
+      this.clientMessage = ''
+      this.selectedConsulting = false
+      this.selectedBrandig = false
+      this.selectedDevelopment = false
+      this.selectedDesign = false
+    },
     submitForm() {
       console.log('Name: ' + this.clientName)
       console.log('Mail: ' + this.clientMail)
       console.log('Phone: ' + this.clientPhone)
       console.log('Message: ' + this.clientMessage)
+      console.log('Consultoria de TI: ' + this.selectedConsulting)
+      console.log('Registro de Marca: ' + this.selectedBrandig)
+      console.log('Criação e gestão de sites: ' + this.selectedDevelopment)
+      console.log('Design gráfico: ' + this.selectedDesign)
+      this.clearForm()
+    },
+    setButtonState(event) {
+      if (event.target.value === 'consulting') {
+        this.selectedConsulting = !this.selectedConsulting
+      } else if (event.target.value === 'branding') {
+        this.selectedBrandig = !this.selectedBrandig
+      } else if (event.target.value === 'development') {
+        this.selectedDevelopment = !this.selectedDevelopment
+      } else if (event.target.value === 'design') {
+        this.selectedDesign = !this.selectedDesign
+      }
     }
   }
 }
@@ -132,8 +187,18 @@ textarea::placeholder {
   border-color: var(--main-orange-color);
   border-radius: 2rem;
   border-width: 1px;
+  border-style: solid;
   padding: 0.5rem;
   color: white;
+}
+
+.serviceButton:hover,
+.serviceButton:active {
+  background-color: var(--main-orange-color);
+}
+
+.serviceButtonIsActive {
+  background-color: var(--main-orange-color);
 }
 
 #submitMessage {
